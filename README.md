@@ -1,6 +1,6 @@
-# Atividade de Java - 3º Período 
+# Atividade de Java - 3º Período ADS
 
-Repositório com as questões práticas e teóricas.
+Repositório com as questões práticas e teóricas da disciplina de Java.
 
 ## Questões práticas
 - Questão 1: Media.java - cálculo de média ponderada
@@ -12,6 +12,7 @@ Repositório com as questões práticas e teóricas.
 
 O `Scanner` é uma classe do pacote `java.util` usada para ler dados digitados pelo usuário no console. Para usá-la, é preciso importar com `import java.util.Scanner;` e criar um objeto passando `System.in`, que representa a entrada padrão (teclado):
 
+```java
 Scanner scanner = new Scanner(System.in);
 double nota = scanner.nextDouble();
 ```
@@ -20,7 +21,7 @@ O método `nextDouble()` lê um número decimal digitado pelo usuário e guarda 
 
 Já o `System.out.printf` serve para formatar a saída de dados no console, permitindo controlar coisas como quantas casas decimais um número vai mostrar. Ele usa um texto com marcadores especiais (como `%.2f` para número decimal com 2 casas) e depois os valores que serão inseridos nesses marcadores:
 
-``
+```java
 System.out.printf("Nota: %.2f%n", nota);
 ```
 
@@ -38,7 +39,7 @@ O código original tem três problemas:
 
 **Código corrigido:**
 
-```
+```java
 import java.util.Scanner;
 
 public class Contador {
