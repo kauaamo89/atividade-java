@@ -1,4 +1,4 @@
-# Atividade de Java - 3º Período ADS
+# Atividade de Java - 3º Período
 
 Repositório com as questões práticas e teóricas da disciplina de Java.
 
@@ -10,34 +10,34 @@ Repositório com as questões práticas e teóricas da disciplina de Java.
 
 ## Questão teórica 5
 
-O `Scanner` é uma classe do pacote `java.util` usada para ler dados digitados pelo usuário no console. Para usá-la, é preciso importar com `import java.util.Scanner;` e criar um objeto passando `System.in`, que representa a entrada padrão (teclado):
+O Scanner é uma classe do Java que usa pra ler o que o usuário digita no console. Pra usar, primeiro importa com `import java.util.Scanner;`, depois cria um objeto Scanner passando o `System.in`, que é a entrada do teclado.
 
 ```java
 Scanner scanner = new Scanner(System.in);
 double nota = scanner.nextDouble();
 ```
 
-O método `nextDouble()` lê um número decimal digitado pelo usuário e guarda na variável.
+O `nextDouble()` lê um número decimal digitado e guarda numa variável double.
 
-Já o `System.out.printf` serve para formatar a saída de dados no console, permitindo controlar coisas como quantas casas decimais um número vai mostrar. Ele usa um texto com marcadores especiais (como `%.2f` para número decimal com 2 casas) e depois os valores que serão inseridos nesses marcadores:
+Já o `System.out.printf` serve pra formatar como o número vai aparecer na tela, tipo quantas casas decimais mostrar. Usa um `%` seguido de código, tipo `%.2f` que mostra o número com 2 casas depois da vírgula.
 
 ```java
 System.out.printf("Nota: %.2f%n", nota);
 ```
 
-O `%.2f` indica que o valor será exibido como número decimal (float/double) com 2 casas depois da vírgula, e o `%n` pula linha ao final.
+O `%n` no final serve só pra pular linha depois de imprimir.
 
 ## Questão teórica 6
 
-O código original tem três problemas:
+O código tinha 3 erros:
 
-1. **Assinatura errada do main:** `public static void main(String args)` está sem os colchetes. O correto é `String[] args`, pois o `main` recebe um vetor (array) de argumentos, não uma única String. Sem isso, o Java não reconhece o método como ponto de entrada do programa.
+1. Faltou os colchetes no `main`. Tava `String args`, mas o certo é `String[] args`, porque o main recebe um array de strings, não uma string só. Sem isso o Java nem reconhece o método main.
 
-2. **Ponto e vírgula faltando:** a linha `System.out.println("Contador: " + contador)` não termina com `;`, o que gera erro de compilação.
+2. Faltou ponto e vírgula depois do `System.out.println("Contador: " + contador)`. Toda linha de comando em Java precisa terminar com `;`.
 
-3. **Loop infinito (erro de lógica):** dentro do `while`, o valor de `contador` nunca é alterado. Como a condição é `contador <= 5` e `contador` sempre vale 0, o laço nunca termina.
+3. O `contador` nunca mudava dentro do while. Como a condição era `contador <= 5` e ele sempre valia 0, o programa ficava rodando pra sempre (loop infinito).
 
-**Código corrigido:**
+Código corrigido:
 
 ```java
 import java.util.Scanner;
@@ -54,4 +54,4 @@ public class Contador {
 }
 ```
 
-A correção adiciona `contador++;` dentro do laço, garantindo que a variável aumente a cada repetição até ultrapassar 5 e o loop parar.
+O que eu adicionei foi o `contador++;` dentro do while, assim ele vai aumentando até passar de 5 e o loop parar.
